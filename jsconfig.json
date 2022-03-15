@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "jsx": "react-jsx"
+  },
+  "exclude": ["node_modules", "cypress"],
+  "include": ["./src/**/*.js", "./src/**/*.jsx"]
+}
