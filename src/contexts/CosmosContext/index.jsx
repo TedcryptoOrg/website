@@ -7,6 +7,7 @@ export const CosmosProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [address, setAddress] = useState(undefined);
   const [connected, setConnected] = useState(false);
+  const [contract, setContract] = useState(undefined);
 
   const connectWallet = async () => {
     console.log("connectWallet")

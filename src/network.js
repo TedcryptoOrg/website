@@ -1,5 +1,3 @@
-import { Bech32Address } from "@keplr-wallet/cosmos";
-
 const Network = {
   comdex: {
     rpc: "https://rpc.comdex.one",
@@ -14,7 +12,14 @@ const Network = {
     bip44: {
       coinType: 118,
     },
-    bech32Config: Bech32Address.defaultBech32Config("comdex"),
+    bech32Config: {
+      bech32PrefixAccAddr: "osmo",
+      bech32PrefixAccPub: "osmopub",
+      bech32PrefixValAddr: "osmovaloper",
+      bech32PrefixValPub: "osmovaloperpub",
+      bech32PrefixConsAddr: "osmovalcons",
+      bech32PrefixConsPub: "osmovalconspub"
+    },
     currencies: [
       {
         coinDenom: "CMDX",

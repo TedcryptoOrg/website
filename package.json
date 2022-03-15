@@ -4,7 +4,6 @@
   "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@keplr-wallet/cosmos": "^0.9.16",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
