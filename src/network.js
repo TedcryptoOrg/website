@@ -1,5 +1,5 @@
 const Network = {
-  chainId: "osmosis-1",
+  chainId: "comdex-1",
   
   rpcUrl: "",
 

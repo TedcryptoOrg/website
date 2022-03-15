@@ -33,7 +33,7 @@ export const CosmosProvider = ({ children }) => {
         // If the same chain id is already registered, it will resolve and not require the user interactions.
         await window.keplr.experimentalSuggestChain({
           // Chain-id of the Osmosis chain.
-          chainId: "osmosis-1",
+          chainId: Network.chainId,
           // The name of the chain to be displayed to the user.
           chainName: "Osmosis mainnet",
           // RPC endpoint of the chain. In this case we are using blockapsis, as it's accepts connections from any host currently. No Cors limitations.
