@@ -7,6 +7,7 @@ import logoheader from '../../assets/images/logo/logo.png'
 import logoheader2x from '../../assets/images/logo/logo@2x.png'
 import logodark from '../../assets/images/logo/logo_dark.png'
 import logodark2x from '../../assets/images/logo/logo_dark@2x.png'
+import ConnectWallet from 'components/ConnectWallet'
 
 const Header = () => {
     const { pathname } = useLocation();
@@ -78,6 +79,7 @@ const Header = () => {
                                                 </li>
                                             ))
                                         }
+                                        <li className='menu-item'><ConnectWallet></ConnectWallet></li>
                                     </ul>
                                 </nav>
                             </div>
