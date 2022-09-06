@@ -3,9 +3,9 @@ name: Build & Deploy
 on:
   push:
     branches: [ "master" ]
+
   pull_request:
-    branches:
-      - "caprover"
+    branches: [ "caprover" ]
 
 jobs:
   build-and-deploy:
