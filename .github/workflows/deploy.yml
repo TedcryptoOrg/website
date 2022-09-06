@@ -16,6 +16,8 @@ jobs:
         node-version: [18.x]
 
     steps:
+      - uses: actions/checkout@v3
+
       - uses: a7ul/tar-action@v1.1.0
         with:
           command: c
