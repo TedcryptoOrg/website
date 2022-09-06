@@ -38,10 +38,6 @@ const Header = () => {
         setActiveIndex(index);
     };
 
-    function renderLink(link) {
-
-    }
-
     return (
         <header id="header_main" className="header_1 js-header" ref={headerRef}>
             <div className="themesflat-container">
@@ -66,7 +62,7 @@ const Header = () => {
                                                     {data.isHash ? (
                                                         <HashLink to={data.links} >{data.name}</HashLink>
                                                     ) : (
-                                                        <a href={data.links} target="_blank">{data.name}</a>
+                                                        <a href={data.links} target="_blank" rel="noreferrer">{data.name}</a>
                                                     )}
                                                     {
                                                          data.namesub &&

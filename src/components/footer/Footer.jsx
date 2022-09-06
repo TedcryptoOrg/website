@@ -86,7 +86,7 @@ const Footer = () => {
                                     <ul>
                                         {
                                             socialList.map((item,index) =>(
-                                                <li key={index}><a href={item.link} target="_blank"><i className={item.icon}></i></a></li>
+                                                <li key={index}><a href={item.link} target="_blank" rel="noreferrer"><i className={item.icon}></i></a></li>
                                             ))
                                         }
                                     </ul>

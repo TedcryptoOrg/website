@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import {HashLink} from 'react-router-hash-link';
 import { Navigation, Scrollbar, A11y   } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';

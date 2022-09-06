@@ -45,7 +45,7 @@ const Node = ({ key, info }) => {
                         <img src={info.logo} alt="tedcrypto" />
                     </div>
                     <div className="info">
-                        <span>{info.isPartner && "Partner" || info.isWhitelabel && "Whitelabel" || "Node"}</span>
+                        <span>{(info.isPartner && "Partner") || (info.isWhitelabel && "Whitelabel") || "Node"}</span>
                         <h6>{info.name}</h6>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ const Node = ({ key, info }) => {
             </div>
             <div className="card-bottom center">
                 {info.isEnabled && <button className="sc-button style wallet fl-button pri-3">
-                    <a href={info.stakeUrl} target="_blank">Stake</a>
+                    <a href={info.stakeUrl} target="_blank" rel="noreferrer">Stake</a>
                 </button>}
                 {info.isTest && <button className="sc-button style bag fl-button pri-3 no-bg">
                     Testnet
