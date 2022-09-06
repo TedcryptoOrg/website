@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import axios from 'axios';
 
@@ -23,10 +23,6 @@ const Node = ({ key, info }) => {
         }
 
         return (data.chain.params.calculated_apr * 100).toFixed(2);
-    }
-
-    async function getSolanaAPR(chain) {
-        let data = null;
     }
 
     const getAPR = async (chain) => {
