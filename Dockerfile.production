@@ -14,5 +14,7 @@ COPY package-lock.json ./
 # add app
 COPY . ./
 
+EXPOSE 80
+
 # start app
 CMD ["npm", "start"]
