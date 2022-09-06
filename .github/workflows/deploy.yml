@@ -2,10 +2,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [ "caprover" ]
-
-  pull_request:
-    branches: [ "caprover" ]
+    branches: [ "master" ]
 
 env:
   CI: false
