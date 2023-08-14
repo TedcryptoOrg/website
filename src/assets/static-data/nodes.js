@@ -13,9 +13,20 @@ import rebusLogo from '../images/crypto/rebus/logo.jpg';
 import comdexLogo from '../chain-registry/comdex/images/cmdx.png';
 import teritoriLogo from '../chain-registry/teritori/images/tori.svg';
 import marsLogo from '../chain-registry/mars/images/mars-token.png';
+import osmosisLogo from '../chain-registry/osmosis/images/osmo.png';
 import whiteWhaleLogo from '../chain-registry/migaloo/images/whitewhale.png';
 
 const nodesData = [
+    {
+        slug: 'osmosis',
+        name: "OSMOSIS",
+        tags: "cosmos",
+        logo: osmosisLogo,
+        stakeUrl: 'https://restake.app/osmosis/osmovaloper1xk23a255qm4kn6gdezr6jm7zmupn23t3pqjjn6',
+        isEnabled: true,
+        isTest: false,
+        isPartner: false,
+    },
     {
         slug: 'mars',
         name: "MARS",
