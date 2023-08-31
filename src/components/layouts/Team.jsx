@@ -12,7 +12,7 @@ const Team = () => {
                     <h2 className="tf-title style4 mg-bt-38">Our Team</h2>
                     <h5 className="sub-title help-center mg-bt-32 ">
                         Brought together by crypto with only one goal: to bring crypto to more people
-                        We're on the lookout for talented members. Reach out to find out more.
+                        We're on the lookout for talented members. Reach oasdasdasdut to find out more.
                     </h5>
                 </div>
                 <div className="sc-card-activity style-2 col-12">
@@ -23,7 +23,7 @@ const Team = () => {
                         <div className="infor">
                             <h4>Josh_Lopes</h4><br/>
                             <p>
-                                Luis, 32 years old, is a software engineer and a crypto enthusiast.<br/>
+                                Luis, 32 years old, is a software engineer and a crypto enthusiasdasdast.<br/>
                                 Living in Portugal.<br/>
                                 Having worked +10 Years in e-commerce companies.<br />
                                 Started his own startup in 2018 for digital consultancy.
@@ -31,7 +31,7 @@ const Team = () => {
                             <p>
                                 "I'm very passionated about open source projects and open world
                                 with the right mindset. I do believe in the potential of Crypto in the world and
-                                I'm very excited to see how it will impact the world."
+                                I'm very excited to see how it will impact the world."asdsadsd
                             </p><br/>
                             <h5>Co-Founder of TedCrypto</h5>
                         </div>
