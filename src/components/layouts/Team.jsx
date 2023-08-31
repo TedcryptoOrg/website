@@ -11,7 +11,7 @@ const Team = () => {
                 <div className="col-md-12">
                     <h2 className="tf-title style4 mg-bt-38">Our Team</h2>
                     <h5 className="sub-title help-center mg-bt-32 ">
-                        Brought together by crypto with only one goal: to bring crypto to more people
+                        Hello! Brought together by crypto with only one goal: to bring crypto to more people
                         We're on the lookout for talented members. Reach out to find out more.
                     </h5>
                 </div>
