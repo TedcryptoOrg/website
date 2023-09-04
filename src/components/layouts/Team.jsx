@@ -82,9 +82,9 @@ const Team = () => {
                             <p>
                                 With a background steeped in traditional finance and accounting, Thomas ventured into the world of crypto in mid-2017.
                                 Thomas bridges the chasm between financial prudence and crypto dynamism. 
-                                Apart from working with Tedcrypo he's also the founder of Crypto & Taxes Portugal and co-founder of Crypto Edits.
+                                Apart from working with Tedcrypo, he's also the founder of Crypto & Taxes Portugal and co-founder of Crypto Edits.
                             </p><br/>
-                            <h5>Financer</h5>
+                            <h5>Finance and Investor Relations</h5>
                         </div>
                     </div>
                 </div>
