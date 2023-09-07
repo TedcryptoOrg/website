@@ -15,14 +15,31 @@ import teritoriLogo from '../chain-registry/teritori/images/tori.svg';
 import marsLogo from '../chain-registry/mars/images/mars-token.png';
 import osmosisLogo from '../chain-registry/osmosis/images/osmo.png';
 import whiteWhaleLogo from '../chain-registry/migaloo/images/whitewhale.png';
+import akashLogo from '../chain-registry/akash/images/akt.png';
 
 const nodesData = [
+    {
+        slug: 'akash',
+        name: "Akash",
+        tags: "cosmos",
+        logo: akashLogo,
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/akash?modal=validator&chain=akashnet-2&validator_address=akashvaloper1u7k6tpyvtw25we4mnu6ld6cjs3p8f0256v7g4z&referral=true',
+            restake: 'https://restake.app/akash/akashvaloper1u7k6tpyvtw25we4mnu6ld6cjs3p8f0256v7g4z'
+        },
+        isEnabled: true,
+        isTest: false,
+        isPartner: false,
+    },
     {
         slug: 'osmosis',
         name: "OSMOSIS",
         tags: "cosmos",
         logo: osmosisLogo,
-        stakeUrl: 'https://restake.app/osmosis/osmovaloper1xk23a255qm4kn6gdezr6jm7zmupn23t3pqjjn6',
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/osmosis?modal=validator&chain=osmosis-1&validator_address=osmovaloper1xk23a255qm4kn6gdezr6jm7zmupn23t3pqjjn6&referral=true',
+            restake: 'https://restake.app/osmosis/osmovaloper1xk23a255qm4kn6gdezr6jm7zmupn23t3pqjjn6'
+        },
         isEnabled: true,
         isTest: false,
         isPartner: false,
@@ -32,7 +49,10 @@ const nodesData = [
         name: "MARS",
         tags: "cosmos",
         logo: marsLogo,
-        stakeUrl: 'https://restake.app/mars/marsvaloper1e7f0pv2glp5mslqze5cnv4vrwv52rtmllv4ker',
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/mars-hub?modal=validator&chain=mars-1&validator_address=marsvaloper1e7f0pv2glp5mslqze5cnv4vrwv52rtmllv4ker&referral=true',
+            restake: 'https://restake.app/mars/marsvaloper1e7f0pv2glp5mslqze5cnv4vrwv52rtmllv4ker'
+        },
         isEnabled: true,
         isTest: false,
         isPartner: false,
@@ -42,7 +62,10 @@ const nodesData = [
         name: "EVMOs",
         tags: "cosmos",
         logo: evmosLogo,
-        stakeUrl: 'https://restake.app/evmos/evmosvaloper19fv2gwkgv3x53lau3um6tzg7qxvq96grvg97zr',
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/evmos?modal=validator&chain=evmos_9001-2&validator_address=evmosvaloper19fv2gwkgv3x53lau3um6tzg7qxvq96grvg97zr&referral=true',
+            restake: 'https://restake.app/evmos/evmosvaloper19fv2gwkgv3x53lau3um6tzg7qxvq96grvg97zr'
+        },
         isEnabled: true,
         isTest: false,
         isPartner: false,
@@ -52,7 +75,10 @@ const nodesData = [
         name: "Juno",
         tags: "cosmos",
         logo: juno,
-        stakeUrl: 'https://restake.app/juno/junovaloper14xmyp2hdd586frvl0d5mpqy5j9rjkt4khdp5hd',
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/juno?modal=validator&chain=juno-1&validator_address=junovaloper14xmyp2hdd586frvl0d5mpqy5j9rjkt4khdp5hd&referral=true',
+            restake: 'https://restake.app/juno/junovaloper14xmyp2hdd586frvl0d5mpqy5j9rjkt4khdp5hd'
+        },
         isEnabled: true,
         isTest: false,
         isWhitelabel: false,
@@ -62,7 +88,10 @@ const nodesData = [
         name: "Stride",
         tags: "cosmos",
         logo: strideLogo,
-        stakeUrl: 'https://restake.app/stride/stridevaloper19twsea48jjup6qrfv55v0fr8hzt7zy4rul5mpg',
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper19twsea48jjup6qrfv55v0fr8hzt7zy4rul5mpg&referral=true',
+            restake: 'https://restake.app/stride/stridevaloper19twsea48jjup6qrfv55v0fr8hzt7zy4rul5mpg'
+        },
         isEnabled: true,
         isTest: false,
     },
@@ -71,7 +100,9 @@ const nodesData = [
         name: "WhiteWhale",
         tags: "cosmos",
         logo: whiteWhaleLogo,
-        stakeUrl: 'https://restake.app/migaloo/migaloovaloper1r37anntu9wgk06jeycatp2npmytqugq586jzsh',
+        stakeUrl: {
+            restake: 'https://restake.app/migaloo/migaloovaloper1r37anntu9wgk06jeycatp2npmytqugq586jzsh'
+        },
         isEnabled: true,
         isTest: false,
     },
@@ -80,7 +111,9 @@ const nodesData = [
         name: "Comdex",
         tags: "cosmos",
         logo: comdexLogo,
-        stakeUrl: 'https://restake.app/comdex/comdexvaloper1zf8k0qlvr0uq4gy73ex9vhjxwlwls7kaxt9jk2',
+        stakeUrl: {
+            restake: 'https://restake.app/comdex/comdexvaloper1zf8k0qlvr0uq4gy73ex9vhjxwlwls7kaxt9jk2'
+        },
         isEnabled: true,
         isTest: false,
     },
@@ -89,7 +122,9 @@ const nodesData = [
         name: "Teritori",
         tags: "cosmos",
         logo: teritoriLogo,
-        stakeUrl: 'https://restake.app/teritori/torivaloper1drgucz0twd0thvdkdd9gm9wf7rtarayq6ygarc',
+        stakeUrl: {
+            restake: 'https://restake.app/teritori/torivaloper1drgucz0twd0thvdkdd9gm9wf7rtarayq6ygarc'
+        },
         isEnabled: true,
         isTest: false,
     },
@@ -98,7 +133,9 @@ const nodesData = [
         name: "Nomic",
         tags: "cosmos",
         logo: nomicLogo,
-        stakeUrl: 'https://app.nomic.io/',
+        stakeUrl: {
+            nomic: 'https://app.nomic.io/'
+        },
         isEnabled: true,
     },
     {
@@ -106,7 +143,9 @@ const nodesData = [
         name: "Rebus",
         tags: "cosmos",
         logo: rebusLogo,
-        stakeUrl: 'https://app.rebuschain.com/staking',
+        stakeUrl: {
+            rebus: 'https://app.rebuschain.com/staking'
+        },
         isEnabled: true,
     },
     {
@@ -114,35 +153,56 @@ const nodesData = [
         name: "Bitsong",
         tags: "cosmos",
         logo: bitsongLogo,
-        stakeUrl: 'https://restake.app/bitsong/bitsongvaloper1qxw4fjged2xve8ez7nu779tm8ejw92rv0vcuqr',
+        stakeUrl: {
+            restake: 'https://restake.app/bitsong/bitsongvaloper1qxw4fjged2xve8ez7nu779tm8ejw92rv0vcuqr'
+        },
         isEnabled: true,
     },
     {
-        slug: 'solana',
-        name: "Solana (Stake2Earn)",
-        tags: "solana",
-        logo: solana,
-        stakeUrl: 'https://solanabeach.io/validator/6559KMdiUseNSAkRcK9WcFcNTppoj6jWtKVedpMkBYCn',
+        slug: 'chihuahua',
+        name: "Chihuahua",
+        tags: "cosmos",
+        logo: chihuahualogo,
+        stakeUrl: {
+            restake: 'https://restake.app/chihuahua/chihuahuavaloper1n7n0rgm37yp8rflxyhw2u75eh6j6tqnp72w5zq'
+        },
         isEnabled: true,
         isTest: false,
-        isPartner: true,
     },
     {
         slug: 'stargaze',
         name: "Stargaze (Bad Kids)",
         tags: "cosmos",
         logo: stargaze,
-        stakeUrl: 'https://restake.app/stargaze/starsvaloper1gz645mefvu5emd0llpfjchqqpyuxt0xxq34per',
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/stargaze?modal=validator&chain=stargaze-1&validator_address=starsvaloper1gz645mefvu5emd0llpfjchqqpyuxt0xxq34per&referral=true',
+            restake: 'https://restake.app/stargaze/starsvaloper1gz645mefvu5emd0llpfjchqqpyuxt0xxq34per'
+        },
         isEnabled: true,
         isTest: false,
         isWhitelabel: true,
+    },
+    {
+        slug: 'solana',
+        name: "Solana (Stake2Earn)",
+        tags: "solana",
+        logo: solana,
+        stakeUrl: {
+            solanaBeach: 'https://solanabeach.io/validator/6559KMdiUseNSAkRcK9WcFcNTppoj6jWtKVedpMkBYCn'
+        },
+        isEnabled: true,
+        isTest: false,
+        isPartner: true,
     },
     {
         slug: 'cosmoshub',
         name: "Cosmos Hub (Don Cryptonium)",
         tags: "cosmos",
         logo: cosmos,
-        stakeUrl: 'https://restake.app/cosmoshub/cosmosvaloper1rj6324uq904z5zr96zg6ew9qjyau9u6h5nflg6',
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/cosmos-hub?modal=validator&chain=cosmoshub-4&validator_address=cosmosvaloper1rj6324uq904z5zr96zg6ew9qjyau9u6h5nflg6&referral=true',
+            restake: 'https://restake.app/cosmoshub/cosmosvaloper1rj6324uq904z5zr96zg6ew9qjyau9u6h5nflg6'
+        },
         isEnabled: true,
         isTest: false,
         isWhitelabel: true,
@@ -152,26 +212,22 @@ const nodesData = [
         name: "CROnquerorsNode",
         tags: "cosmos",
         logo: cryptoLogo,
-        stakeUrl: 'https://restake.app/cryptoorgchain/crocncl1s078nr9kp4ulsxgnsasnr3k6zg5q9erps348eg',
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/crypto-org?modal=validator&chain=crypto-org-chain-mainnet-1&validator_address=crocncl1s078nr9kp4ulsxgnsasnr3k6zg5q9erps348eg&referral=true',
+            restake: 'https://restake.app/cryptoorgchain/crocncl1s078nr9kp4ulsxgnsasnr3k6zg5q9erps348eg'
+        },
         isEnabled: true,
         price: 0,
         isPartner: true
-    },
-    {
-        slug: 'chihuahua',
-        name: "Chihuahua",
-        tags: "cosmos",
-        logo: chihuahualogo,
-        stakeUrl: 'https://restake.app/chihuahua/chihuahuavaloper1n7n0rgm37yp8rflxyhw2u75eh6j6tqnp72w5zq',
-        isEnabled: true,
-        isTest: false,
     },
     {
         slug: 'odin',
         name: "Odin",
         tags: "cosmos",
         logo: odinLogo,
-        stakeUrl: 'https://restake.app/odin/odinvaloper1sxvwx7h6wp4hcn3rh2xtl8mv6w0w9mvudd6e3j',
+        stakeUrl: {
+            restake: 'https://restake.app/odin/odinvaloper1sxvwx7h6wp4hcn3rh2xtl8mv6w0w9mvudd6e3j'
+        },
         isEnabled: true,
     },
 ]
