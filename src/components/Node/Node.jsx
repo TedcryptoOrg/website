@@ -1,4 +1,6 @@
 import React, {useEffect, useState, useCallback} from 'react';
+import keplrIcon from '../../assets/images/stake-apps/keplr_icon.png';
+import restakeIcon from '../../assets/images/stake-apps/restake_icon.png';
 
 import axios from 'axios';
 
@@ -54,15 +56,28 @@ const Node = ({ key, info }) => {
                     <h5>~{currentApr ?? 'Loading...'}%</h5>
                 </div>
             </div>
-            <div className="card-bottom center">
-                {info.isEnabled && <button className="sc-button style wallet fl-button pri-3">
-                    <a href={info.stakeUrl} target="_blank" rel="noreferrer">Stake</a>
-                </button>}
+            <div className="card-bottom">
+                {info.isEnabled && (
+                    <div className="info">
+                        <h6>Stake with:</h6><br/>
+                        {Object.entries(info.stakeUrl).map(([key, url]) => (
+                            <span>
+                                <a href={url} target="_blank" rel="noreferrer">
+                                    <img
+                                        src={key === 'keplr' ? keplrIcon : restakeIcon}
+                                        width="20px"
+                                        alt={`${key} icon`}
+                                    /> <span style={{fontSize: '15px'}}>{key}</span>
+                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            </span>
+                        ))}
+                    </div>
+                )}
                 {info.isTest && <button className="sc-button style bag fl-button pri-3 no-bg">
-                    Testnet
+                    <h6>Testnet</h6>
                 </button>}
                 {!info.isTest && !info.isEnabled && <button className="sc-button style bag fl-button pri-3 no-bg">
-                    Coming Soon
+                    <h6>Coming Soon</h6>
                 </button>}
             </div>
         </div>
