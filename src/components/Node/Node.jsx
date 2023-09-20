@@ -62,13 +62,13 @@ const Node = ({ key, info }) => {
                         <h6>Stake with:</h6><br/>
                         {Object.entries(info.stakeUrl).map(([key, url]) => (
                             <span>
-                                <a href={url} target="_blank" rel="noreferrer">
+                                <a href={url} target="_blank" rel="noreferrer" className="btn fl-st-1 fl-button btn-primary" style={{margin: '0 5px 0 0'}}>
                                     <img
                                         src={key === 'keplr' ? keplrIcon : restakeIcon}
                                         width="20px"
                                         alt={`${key} icon`}
                                     /> <span style={{fontSize: '15px'}}>{key}</span>
-                                </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </a>
                             </span>
                         ))}
                     </div>

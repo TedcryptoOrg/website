@@ -139,16 +139,6 @@ const nodesData = [
         isEnabled: true,
     },
     {
-        slug: 'rebus',
-        name: "Rebus",
-        tags: "cosmos",
-        logo: rebusLogo,
-        stakeUrl: {
-            rebus: 'https://app.rebuschain.com/staking'
-        },
-        isEnabled: true,
-    },
-    {
         slug: 'bitsong',
         name: "Bitsong",
         tags: "cosmos",
@@ -219,6 +209,16 @@ const nodesData = [
         isEnabled: true,
         price: 0,
         isPartner: true
+    },
+    {
+        slug: 'rebus',
+        name: "Rebus",
+        tags: "cosmos",
+        logo: rebusLogo,
+        stakeUrl: {
+            rebus: 'https://app.rebuschain.com/staking'
+        },
+        isEnabled: true,
     },
     {
         slug: 'odin',
