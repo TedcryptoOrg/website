@@ -14,7 +14,5 @@ COPY . ./
 
 EXPOSE 3000
 
-RUN npm run build
-
 # start app
 CMD ["serve", "-s", "build"]
