@@ -45,6 +45,18 @@ const nodesData = [
         isPartner: false,
     },
     {
+        slug: 'kujira',
+        name: "Kujira",
+        tags: "cosmos",
+        logo: kujiraLogo,
+        stakeUrl: {
+            restake: 'https://restake.app/kujira/kujiravaloper1sktw94jvlwsmwtevdgfechnjwq9k76harslqdv'
+        },
+        isEnabled: true,
+        isTest: false,
+        isPartner: false,
+    },
+    {
         slug: 'mars',
         name: "MARS",
         tags: "cosmos",
