@@ -16,6 +16,7 @@ import marsLogo from '../chain-registry/mars/images/mars-token.png';
 import osmosisLogo from '../chain-registry/osmosis/images/osmo.png';
 import whiteWhaleLogo from '../chain-registry/migaloo/images/whitewhale.png';
 import akashLogo from '../chain-registry/akash/images/akt.png';
+import kujiraLogo from '../chain-registry/kujira/images/kuji.png';
 
 const nodesData = [
     {
@@ -39,6 +40,18 @@ const nodesData = [
         stakeUrl: {
             keplr: 'https://wallet.keplr.app/chains/osmosis?modal=validator&chain=osmosis-1&validator_address=osmovaloper1xk23a255qm4kn6gdezr6jm7zmupn23t3pqjjn6&referral=true',
             restake: 'https://restake.app/osmosis/osmovaloper1xk23a255qm4kn6gdezr6jm7zmupn23t3pqjjn6'
+        },
+        isEnabled: true,
+        isTest: false,
+        isPartner: false,
+    },
+    {
+        slug: 'kujira',
+        name: "Kujira",
+        tags: "cosmos",
+        logo: kujiraLogo,
+        stakeUrl: {
+            restake: 'https://restake.app/kujira/kujiravaloper1sktw94jvlwsmwtevdgfechnjwq9k76harslqdv'
         },
         isEnabled: true,
         isTest: false,
