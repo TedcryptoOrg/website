@@ -16,6 +16,7 @@ import marsLogo from '../chain-registry/mars/images/mars-token.png';
 import osmosisLogo from '../chain-registry/osmosis/images/osmo.png';
 import whiteWhaleLogo from '../chain-registry/migaloo/images/whitewhale.png';
 import akashLogo from '../chain-registry/akash/images/akt.png';
+import kujiraLogo from '../chain-registry/kujira/images/kuji.png';
 
 const nodesData = [
     {
