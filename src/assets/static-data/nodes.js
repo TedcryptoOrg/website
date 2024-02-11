@@ -17,6 +17,7 @@ import osmosisLogo from '../chain-registry/osmosis/images/osmo.png';
 import whiteWhaleLogo from '../chain-registry/migaloo/images/whitewhale.png';
 import akashLogo from '../chain-registry/akash/images/akt.png';
 import kujiraLogo from '../chain-registry/kujira/images/kuji.png';
+import dymensionLogo from '../chain-registry/dymension/images/dymension-logo.svg';
 
 const nodesData = [
     {
@@ -147,7 +148,10 @@ const nodesData = [
         tags: "cosmos",
         logo: nomicLogo,
         stakeUrl: {
-            nomic: 'https://app.nomic.io/'
+            nomic: {
+                url: 'https://app.nomic.io/',
+                logo: nomicLogo
+            }
         },
         isEnabled: true,
     },
@@ -183,6 +187,23 @@ const nodesData = [
         isTest: false,
     },
     {
+        slug: 'dymension',
+        name: "Dymension (Bad Kids)",
+        tags: "cosmos",
+        logo: dymensionLogo,
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/dymension?modal=validator&chain=dymension_1100-1&validator_address=dymvaloper1574uygjnlkegtdtltyw7xrq43qsms28lcwnurh',
+            dymension: {
+                url: 'https://portal.dymension.xyz/dymension/staking',
+                logo: dymensionLogo
+            },
+            restake: 'https://restake.app/dymension/dymvaloper1574uygjnlkegtdtltyw7xrq43qsms28lcwnurh'
+        },
+        isEnabled: true,
+        isTest: false,
+        isWhitelabel: true,
+    },
+    {
         slug: 'stargaze',
         name: "Stargaze (Bad Kids)",
         tags: "cosmos",
@@ -201,7 +222,10 @@ const nodesData = [
         tags: "solana",
         logo: solana,
         stakeUrl: {
-            solanaBeach: 'https://solanabeach.io/validator/6559KMdiUseNSAkRcK9WcFcNTppoj6jWtKVedpMkBYCn'
+            solanaBeach: {
+                url: 'https://solanabeach.io/validator/6559KMdiUseNSAkRcK9WcFcNTppoj6jWtKVedpMkBYCn',
+                logo: solana
+            }
         },
         isEnabled: true,
         isTest: false,
