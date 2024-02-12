@@ -17,7 +17,7 @@ import akashLogo from '../chain-registry/akash/images/akt.png';
 import kujiraLogo from '../chain-registry/kujira/images/kuji.png';
 import dymensionLogo from '../chain-registry/dymension/images/dymension-logo.svg';
 import planqLogo from '../chain-registry/planq/images/planq.svg';
-import jackalLogo from '../chain-registry/jackal/images/jkl.svg';
+import jackalLogo from '../chain-registry/jackal/images/jkl.png';
 
 const nodesData = [
     {
