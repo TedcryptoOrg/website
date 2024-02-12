@@ -5,7 +5,6 @@ import bitsongLogo from '../chains/logo/bitsong.png';
 import chihuahualogo from '../chains/logo/chihuahua.png';
 import odinLogo from '../images/crypto/odin/odin_logo.jpeg';
 import stargaze from '../chains/logo/stargaze.png';
-import cosmos from '../chains/logo/cosmos.png';
 import juno from '../chains/logo/juno.png';
 import solana from '../images/crypto/solana/solana.png';
 import strideLogo from '../chain-registry/stride/images/strd.png';
@@ -17,16 +16,17 @@ import whiteWhaleLogo from '../chain-registry/migaloo/images/whitewhale.png';
 import akashLogo from '../chain-registry/akash/images/akt.png';
 import kujiraLogo from '../chain-registry/kujira/images/kuji.png';
 import dymensionLogo from '../chain-registry/dymension/images/dymension-logo.svg';
+import planqLogo from '../chain-registry/planq/images/planq.svg';
+import jackalLogo from '../chain-registry/jackal/images/jkl.svg';
 
 const nodesData = [
     {
-        slug: 'akash',
-        name: "Akash",
+        slug: 'kujira',
+        name: "Kujira",
         tags: "cosmos",
-        logo: akashLogo,
+        logo: kujiraLogo,
         stakeUrl: {
-            keplr: 'https://wallet.keplr.app/chains/akash?modal=validator&chain=akashnet-2&validator_address=akashvaloper1u7k6tpyvtw25we4mnu6ld6cjs3p8f0256v7g4z&referral=true',
-            restake: 'https://restake.app/akash/akashvaloper1u7k6tpyvtw25we4mnu6ld6cjs3p8f0256v7g4z'
+            restake: 'https://restake.app/kujira/kujiravaloper1sktw94jvlwsmwtevdgfechnjwq9k76harslqdv'
         },
         isEnabled: true,
         isTest: false,
@@ -46,16 +46,16 @@ const nodesData = [
         isPartner: false,
     },
     {
-        slug: 'kujira',
-        name: "Kujira",
+        slug: 'stride',
+        name: "Stride",
         tags: "cosmos",
-        logo: kujiraLogo,
+        logo: strideLogo,
         stakeUrl: {
-            restake: 'https://restake.app/kujira/kujiravaloper1sktw94jvlwsmwtevdgfechnjwq9k76harslqdv'
+            keplr: 'https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper19twsea48jjup6qrfv55v0fr8hzt7zy4rul5mpg&referral=true',
+            restake: 'https://restake.app/stride/stridevaloper19twsea48jjup6qrfv55v0fr8hzt7zy4rul5mpg'
         },
         isEnabled: true,
         isTest: false,
-        isPartner: false,
     },
     {
         slug: 'mars',
@@ -65,6 +65,43 @@ const nodesData = [
         stakeUrl: {
             keplr: 'https://wallet.keplr.app/chains/mars-hub?modal=validator&chain=mars-1&validator_address=marsvaloper1e7f0pv2glp5mslqze5cnv4vrwv52rtmllv4ker&referral=true',
             restake: 'https://restake.app/mars/marsvaloper1e7f0pv2glp5mslqze5cnv4vrwv52rtmllv4ker'
+        },
+        isEnabled: true,
+        isTest: false,
+        isPartner: false,
+    },
+    {
+        slug: 'akash',
+        name: "Akash",
+        tags: "cosmos",
+        logo: akashLogo,
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/akash?modal=validator&chain=akashnet-2&validator_address=akashvaloper1u7k6tpyvtw25we4mnu6ld6cjs3p8f0256v7g4z&referral=true',
+            restake: 'https://restake.app/akash/akashvaloper1u7k6tpyvtw25we4mnu6ld6cjs3p8f0256v7g4z'
+        },
+        isEnabled: true,
+        isTest: false,
+        isPartner: false,
+    },
+    {
+        slug: 'planq',
+        name: "Planq",
+        tags: "cosmos",
+        logo: planqLogo,
+        stakeUrl: {
+            restake: 'https://restake.app/planq/plqvaloper1c6za4t7kr620fzjmzrhjv8k7qjvqtvf9pw6n9d'
+        },
+        isEnabled: true,
+        isTest: false,
+        isPartner: false,
+    },
+    {
+        slug: 'jackal',
+        name: "Jackal",
+        tags: "cosmos",
+        logo: jackalLogo,
+        stakeUrl: {
+            restake: 'https://restake.app/jackal/jklvaloper1tj7u05ynwnpezgym05jsh7q02av259548vg4g6'
         },
         isEnabled: true,
         isTest: false,
@@ -82,31 +119,6 @@ const nodesData = [
         isEnabled: true,
         isTest: false,
         isPartner: false,
-    },
-    {
-        slug: 'juno',
-        name: "Juno",
-        tags: "cosmos",
-        logo: juno,
-        stakeUrl: {
-            keplr: 'https://wallet.keplr.app/chains/juno?modal=validator&chain=juno-1&validator_address=junovaloper14xmyp2hdd586frvl0d5mpqy5j9rjkt4khdp5hd&referral=true',
-            restake: 'https://restake.app/juno/junovaloper14xmyp2hdd586frvl0d5mpqy5j9rjkt4khdp5hd'
-        },
-        isEnabled: true,
-        isTest: false,
-        isWhitelabel: false,
-    },
-    {
-        slug: 'stride',
-        name: "Stride",
-        tags: "cosmos",
-        logo: strideLogo,
-        stakeUrl: {
-            keplr: 'https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper19twsea48jjup6qrfv55v0fr8hzt7zy4rul5mpg&referral=true',
-            restake: 'https://restake.app/stride/stridevaloper19twsea48jjup6qrfv55v0fr8hzt7zy4rul5mpg'
-        },
-        isEnabled: true,
-        isTest: false,
     },
     {
         slug: 'migaloo',
@@ -129,6 +141,19 @@ const nodesData = [
         },
         isEnabled: true,
         isTest: false,
+    },
+    {
+        slug: 'juno',
+        name: "Juno",
+        tags: "cosmos",
+        logo: juno,
+        stakeUrl: {
+            keplr: 'https://wallet.keplr.app/chains/juno?modal=validator&chain=juno-1&validator_address=junovaloper14xmyp2hdd586frvl0d5mpqy5j9rjkt4khdp5hd&referral=true',
+            restake: 'https://restake.app/juno/junovaloper14xmyp2hdd586frvl0d5mpqy5j9rjkt4khdp5hd'
+        },
+        isEnabled: true,
+        isTest: false,
+        isWhitelabel: false,
     },
     {
         slug: 'teritori',
@@ -219,19 +244,6 @@ const nodesData = [
         isEnabled: true,
         isTest: false,
         isPartner: true,
-    },
-    {
-        slug: 'cosmoshub',
-        name: "Cosmos Hub (Don Cryptonium)",
-        tags: "cosmos",
-        logo: cosmos,
-        stakeUrl: {
-            keplr: 'https://wallet.keplr.app/chains/cosmos-hub?modal=validator&chain=cosmoshub-4&validator_address=cosmosvaloper1rj6324uq904z5zr96zg6ew9qjyau9u6h5nflg6&referral=true',
-            restake: 'https://restake.app/cosmoshub/cosmosvaloper1rj6324uq904z5zr96zg6ew9qjyau9u6h5nflg6'
-        },
-        isEnabled: true,
-        isTest: false,
-        isWhitelabel: true,
     },
     {
         slug: 'cryptoorgchain',
