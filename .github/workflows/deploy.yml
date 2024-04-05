@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - uses: a7ul/tar-action@v1.1.3
+      - uses: a7ul/tar-action@v1.2.0
         with:
           command: c
           cwd: "./"
