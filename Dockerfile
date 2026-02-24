@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:22.21.1-alpine
+FROM node:24.14.0-alpine
 
 RUN apk add --update python3 make g++\
    && rm -rf /var/cache/apk/*
