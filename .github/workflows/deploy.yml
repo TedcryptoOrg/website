@@ -1,14 +1,32 @@
+# Build the website image, push it to Docker Hub, and roll the
+# tedcrypto-website Portainer stack on Fiona (lotto) over a Tailscale tunnel.
+#
+# The image tag is the commit sha, and the stack's APP_VERSION is rewritten to
+# match, so a rollback is a redeploy with an older tag.
+#
+# Required repo secrets:
+#   DOCKER_USERNAME, DOCKER_PASSWORD          — Docker Hub push
+#   TS_OAUTH_CLIENT_ID, TS_OAUTH_SECRET       — Tailscale (tag:ci), to reach Portainer
+#   PORTAINER_URL, PORTAINER_ACCESS_TOKEN     — Portainer API (http://100.112.208.45:9000)
+#   PORTAINER_STACK_ID, PORTAINER_ENDPOINT_ID — target stack on Fiona
+
 name: Build & Deploy
 
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
+
+concurrency:
+  group: build-deploy-${{ github.ref }}
+  cancel-in-progress: false
 
 env:
   CI: true
+  IMAGE: joshlopes/tedcrypto-website
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -23,19 +41,55 @@ jobs:
       - name: Build
         run: npm run build
 
-      - uses: a7ul/tar-action@v1.2.0
+      # The image only needs the static build, as the CapRover tarball did.
+      - name: Prepare the image context
+        run: |
+          mkdir -p image
+          cp -r build Dockerfile.production image/
+
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
         with:
-          command: c
-          cwd: "./"
-          files: |
-            build/
-            captain-definition
-            Dockerfile.production
-          outPath: deploy.tar
-  
-      - name: Deploy App to Caprover
-        uses: caprover/deploy-from-github@v1.2.0
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - uses: docker/build-push-action@v6
         with:
-          server: ${{ secrets.CAPROVER_SERVER }}
-          app: ${{ secrets.CAPROVER_APP }}
-          token: ${{ secrets.CAPROVER_TOKEN }}
+          context: ./image
+          file: ./image/Dockerfile.production
+          push: true
+          platforms: linux/amd64
+          tags: |
+            docker.io/${{ env.IMAGE }}:latest
+            docker.io/${{ env.IMAGE }}:${{ github.sha }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - name: Connect Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+      - name: Update Portainer stack
+        env:
+          PORTAINER_URL: ${{ secrets.PORTAINER_URL }}
+          TOKEN: ${{ secrets.PORTAINER_ACCESS_TOKEN }}
+          STACK_ID: ${{ secrets.PORTAINER_STACK_ID }}
+          ENDPOINT_ID: ${{ secrets.PORTAINER_ENDPOINT_ID }}
+          APP_VERSION: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          ENV_JSON=$(curl -sf -H "X-API-Key: $TOKEN" \
+            "$PORTAINER_URL/api/stacks/$STACK_ID" | jq '.Env // []')
+          ENV_JSON=$(jq -n --argjson env "$ENV_JSON" --arg v "$APP_VERSION" \
+            '($env | map(select(.name != "APP_VERSION"))) + [{name: "APP_VERSION", value: $v}]')
+          jq -n --rawfile file infrastructure/fiona.yaml \
+                --argjson env "$ENV_JSON" \
+            '{StackFileContent: $file, Env: $env, Prune: true, PullImage: true}' \
+          | curl -sf -X PUT \
+              -H "X-API-Key: $TOKEN" -H "Content-Type: application/json" \
+              "$PORTAINER_URL/api/stacks/$STACK_ID?endpointId=$ENDPOINT_ID" \
+              --data @- -o /dev/null -w "Portainer stack update: HTTP %{http_code}\n"

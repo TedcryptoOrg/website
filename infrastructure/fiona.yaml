@@ -1,0 +1,24 @@
+# The TedCrypto website on Fiona (lotto), as a Portainer stack.
+#
+# Caddy (container `caddy` on the external `proxy` network) routes
+# tedcrypto.io and www.tedcrypto.io to tedcrypto-website:3000.
+#
+# The deploy workflow rewrites APP_VERSION to the commit sha on every push to
+# main. The stack has no secrets.
+
+services:
+  tedcrypto-website:
+    image: joshlopes/tedcrypto-website:${APP_VERSION:-latest}
+    container_name: tedcrypto-website
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
